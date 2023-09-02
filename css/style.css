@@ -5,11 +5,15 @@
     font-family: 'Public Sans', sans-serif;
 }
 
+html, body{
+    scroll-behavior: smooth;
+}
+
 button{
     all: unset;
 }
 .container{
-    min-height: 85vh;
+    /* min-height: 85vh; */
     /* width: 85%; */
 }
 
@@ -19,6 +23,10 @@ nav{
     align-items: center;
     /* background-color: red; */
     padding: 10px 30px;
+}
+
+nav a{
+    color: gray;
 }
 
 nav ul{
@@ -39,12 +47,17 @@ nav button, main button, footer button{
     border-radius: 50px;
 }
 
+.toogler{
+    display: none;
+}
+
 main{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 60px;
     background-color: #f3f4f6;
+    align-items: flex;
 }
 
 main .container{
@@ -62,7 +75,7 @@ main h1{
 
 main p{
     font-size: 20px;
-    margin: 12px;
+    margin: 20px 0px;
 }
 
 #banking{
@@ -95,7 +108,7 @@ main p{
     font-size: 18px;
     margin: 40px 0;
     font-weight: 100;
-    line-height: 30px;
+    line-height: 1.7;
 }
 
 #article {
@@ -174,6 +187,126 @@ footer ul{
 footer img{
     filter: invert(0.3);
     margin-bottom: 10px;
+
+}
+
+@media screen and (max-width: 992px) {
+    main h1{
+        font-size: 40px;
+    }
+    main p{
+        font-size: 18px;
+    }
+
+    main img{
+        width: 45%;
+    }
+
+    #banking .texts p{
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 20px 0;
+    }
+
+    #banking .texts h1{
+        margin: 10px 0;
+    }
+
+    .articles .head h4{
+        font-size: 14px;
+    }
+
+    #banking .text, #article .articles{
+        gap: 20px;
+    }
+
+    footer .foot2{
+        gap: 80px;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    main h1{
+        font-size: 30px;
+    }
+
+    main p{
+        font-size: 16px;
+
+    }
+    #banking .banking p{
+        width: 60%;
+    }
+
+    #banking .text, #article .articles{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer{
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+}
+
+
+@media screen and (max-width:576px) {
+    nav button{
+        display: none;
+    }
+
+    main{
+        flex-direction: column-reverse;
+
+    }
+    main img, main .container{
+        width: 90%;
+        text-align: center;
+    }
+
+    #banking .banking h1{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #banking .banking p{
+        width: 80%;
+        text-align: center;
+    }
+
+    #banking .text, #article .articles{
+        grid-template-columns: 1fr;
+    }
+
+    #banking .texts {
+        text-align: center;
+    }
+
+    .toogler{
+        display: block;
+    }
+
+    .ri-close-circle-fill{
+        display: none;
+    }
+
+    nav ul{
+        position: fixed;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px gray;
+        top: -35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 1.5em;
+        transition: .5s;
+        text-align: center;
+    }
+    
 
 }
  
